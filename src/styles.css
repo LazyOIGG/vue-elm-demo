@@ -1,0 +1,22 @@
+:root {
+    font-size: 16px; /* 基准字号（1rem = 16px） */
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px; /* 移动端调整 */
+    }
+}
+
+/* 重置默认边距 */
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%; /* 防止iOS文字缩放 */
+}
+
+/* 修复 fixed 定位导致的布局偏移 */
+body {
+    padding-top: 3rem; /* 匹配头部高度 */
+    padding-bottom: 3.5rem; /* 匹配底部导航高度 */
+}
