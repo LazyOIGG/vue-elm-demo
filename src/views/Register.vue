@@ -11,40 +11,40 @@
       <!-- 手机号码 -->
       <div class="mb-4 flex flex-col sm:flex-row sm:items-center gap-2">
         <label class="sm:w-24 font-bold text-gray-600">手机号码：</label>
-        <input
-          type="tel"
-          placeholder="请输入手机号"
-          class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
+        <input v-model="phone"
+               type="tel"
+               placeholder="请输入手机号"
+               class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
         >
       </div>
 
       <!-- 密码 -->
       <div class="mb-4 flex flex-col sm:flex-row sm:items-center gap-2">
         <label class="sm:w-24 font-bold text-gray-600">密码：</label>
-        <input
-          type="password"
-          placeholder="请输入密码"
-          class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
+        <input v-model="password"
+               type="password"
+               placeholder="请输入密码"
+               class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
         >
       </div>
 
       <!-- 确认密码 -->
       <div class="mb-4 flex flex-col sm:flex-row sm:items-center gap-2">
         <label class="sm:w-24 font-bold text-gray-600">确认密码：</label>
-        <input
-          type="password"
-          placeholder="请再次输入密码"
-          class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
+        <input v-model="confirmPassword"
+               type="password"
+               placeholder="请再次输入密码"
+               class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
         >
       </div>
 
       <!-- 用户姓名 -->
       <div class="mb-4 flex flex-col sm:flex-row sm:items-center gap-2">
         <label class="sm:w-24 font-bold text-gray-600">用户姓名：</label>
-        <input
-          type="text"
-          placeholder="请输入姓名"
-          class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
+        <input v-model="name"
+               type="text"
+               placeholder="请输入姓名"
+               class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
         >
       </div>
 
@@ -53,11 +53,11 @@
         <label class="sm:w-24 font-bold text-gray-600">性别：</label>
         <div class="flex items-center gap-4">
           <label class="flex items-center gap-1">
-            <input type="radio" name="gender" value="male" class="accent-blue-500">
+            <input type="radio" name="gender" value="male" v-model="gender" class="accent-blue-500">
             男
           </label>
           <label class="flex items-center gap-1">
-            <input type="radio" name="gender" value="female" class="accent-pink-500">
+            <input type="radio" name="gender" value="female" v-model="gender" class="accent-pink-500">
             女
           </label>
         </div>
@@ -65,18 +65,57 @@
 
       <!-- 按钮容器 -->
       <div class="px-2 space-y-4">
-        <button class="w-full h-12 bg-green-500 text-white font-bold rounded-lg active:scale-95 transition-transform">
+        <button
+            @click="handleRegister"
+            class="w-full h-12 bg-green-500 text-white font-bold rounded-lg active:scale-95 transition-transform"
+        >
           注册
         </button>
         <button
-          @click="goToLogin"
-          class="w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg active:scale-95"
+            @click="goToLogin"
+            class="w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg active:scale-95"
         >
           返回登录
         </button>
       </div>
     </main>
 
-    <FooterNav></FooterNav>
+    <FooterNav/>
   </div>
 </template>
+<script setup>
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
+import FooterNav from '../components/FooterNav.vue'
+
+const router = useRouter()
+
+// 表单数据
+const phone = ref('')
+const password = ref('')
+const confirmPassword = ref('')
+const name = ref('')
+const gender = ref('')
+
+// 跳转函数
+const goToLogin = () => {
+  router.push('/login')
+}
+
+// 注册函数
+const handleRegister = () => {
+  if (password.value !== confirmPassword.value) {
+    alert('两次密码不一致')
+    return
+  }
+
+  // 存储用户信息
+  localStorage.setItem('isAuthenticated', 'true')
+  localStorage.setItem('user', JSON.stringify({
+    phone: phone.value,
+    name: name.value,
+    gender: gender.value
+  }))
+  router.push('/profile')
+}
+</script>

@@ -30,9 +30,12 @@
 
       <!-- 按钮容器增加安全边距 -->
       <div class="px-2 space-y-4">
-        <button class="w-full h-12 bg-green-500 text-white font-bold rounded-lg active:scale-95 transition-transform">
+        <button
+            @click="handleLogin"
+            class="w-full h-12 bg-green-500 text-white font-bold rounded-lg active:scale-95 transition-transform"
+        >
           登录
-        </button>
+</button>
         <button
           @click="goToRegister"
           class="w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg active:scale-95"
@@ -42,6 +45,31 @@
       </div>
     </main>
 
-    <FooterNav></FooterNav>
+    <FooterNav />
   </div>
 </template>
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import FooterNav from '../components/FooterNav.vue'
+
+const router = useRouter()
+
+const phone = ref('')
+
+const goToRegister = () => {
+  router.push('/register')
+}
+
+const handleLogin = () => {
+  const storedUser = JSON.parse(localStorage.getItem('user') || '{}')
+  if (storedUser.phone === phone.value) {
+    localStorage.setItem('isAuthenticated', 'true')
+    router.push('/profile')
+  } else {
+    alert('用户不存在，请先注册')
+  }
+}
+</script>
+
+
