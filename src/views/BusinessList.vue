@@ -6,15 +6,15 @@
 
     <ul class="mt-12">
       <li
-        v-for="(business, index) in businesses"
-        :key="index"
-        class="p-4 border-b flex gap-3 bg-white"
-        @click="goToBusinessInfo(business.id)"
+          v-for="(business, index) in businesses"
+          :key="index"
+          class="p-4 border-b flex gap-3 bg-white relative"
+          @click="goToBusinessInfo(business.id)"
       >
         <img
-          :src="getBusinessImage(business.id)"
-          class="w-20 h-20 rounded"
-          :alt="business.name"
+            :src="getBusinessImage(business.id)"
+            class="w-20 h-20 rounded"
+            :alt="business.name"
         >
         <div class="flex-1">
           <h3 class="font-bold">{{ business.name }}</h3>
@@ -22,7 +22,10 @@
             <p>&#165;{{ business.minPrice }}起送 | &#165;{{ business.deliveryFee }}配送</p>
           </div>
           <p class="text-sm mt-1">{{ business.description }}</p>
-          <div v-if="business.quantity" class="absolute top-14 right-4 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+          <div
+              v-if="business.quantity"
+              class="absolute top-4 right-4 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+          >
             {{ business.quantity }}
           </div>
         </div>
@@ -34,8 +37,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import {ref} from 'vue';
+import {useRouter} from 'vue-router';
 import FooterNav from '../components/FooterNav.vue';
 
 const router = useRouter();
