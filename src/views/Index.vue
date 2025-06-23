@@ -20,15 +20,15 @@
     <!-- 点餐分类部分 -->
     <ul class="grid grid-cols-5 gap-4 px-4 py-4 bg-white">
       <li
-        v-for="(item, index) in categories"
-        :key="index"
-        class="flex flex-col items-center"
-        @click="goToBusinessList"
+          v-for="(item, index) in categories"
+          :key="index"
+          class="flex flex-col items-center"
+          @click="goToBusinessList"
       >
         <img
-          :src="getCategoryImage(index + 1)"
-          class="w-12 h-12"
-          :alt="item.name"
+            :src="getCategoryImage(index + 1)"
+            class="w-12 h-12"
+            :alt="item.name"
         >
         <p class="text-xs mt-1">{{ item.name }}</p>
       </li>
@@ -53,14 +53,14 @@
       <div class="text-sm text-orange-500">立即开通 &gt;</div>
     </div>
 
-    <RecommendedSection :businesses="indexBusinesses" title="推荐商家" :imageOffset="1" />
+    <RecommendedSection :businesses="indexBusinesses" title="推荐商家" :imageOffset="1"/>
     <FooterNav title="底部栏"/>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import {ref} from 'vue';
+import {useRouter} from 'vue-router';
 import FooterNav from '../components/FooterNav.vue';
 import RecommendedSection from "@/components/RecommendedSection.vue";
 
@@ -68,16 +68,16 @@ const router = useRouter();
 
 // 分类数据
 const categories = ref([
-  { id: 1, name: '美食' },
-  { id: 2, name: '早餐' },
-  { id: 3, name: '跑腿代购' },
-  { id: 4, name: '汉堡披萨' },
-  { id: 5, name: '甜品饮品' },
-  { id: 6, name: '速食简餐' },
-  { id: 7, name: '地方小吃' },
-  { id: 8, name: '米粉面馆' },
-  { id: 9, name: '包子粥铺' },
-  { id: 10, name: '炸鸡炸串' }
+  {id: 1, name: '美食'},
+  {id: 2, name: '早餐'},
+  {id: 3, name: '跑腿代购'},
+  {id: 4, name: '汉堡披萨'},
+  {id: 5, name: '甜品饮品'},
+  {id: 6, name: '速食简餐'},
+  {id: 7, name: '地方小吃'},
+  {id: 8, name: '米粉面馆'},
+  {id: 9, name: '包子粥铺'},
+  {id: 10, name: '炸鸡炸串'}
 ]);
 
 // 商家数据
@@ -92,8 +92,8 @@ const indexBusinesses = ref([
     distance: 3.22,
     deliveryTime: 30,
     promotions: [
-      { type: 'new', text: '饿了么新用户首单立减9元' },
-      { type: 'special', text: '特价商品5元起' }
+      {type: 'new', text: '饿了么新用户首单立减9元'},
+      {type: 'special', text: '特价商品5元起'}
     ]
   },
   {
@@ -106,7 +106,7 @@ const indexBusinesses = ref([
     distance: 2.5,
     deliveryTime: 25,
     promotions: [
-      { type: 'new', text: '新用户立减10元' }
+      {type: 'new', text: '新用户立减10元'}
     ]
   },
   {
@@ -119,7 +119,7 @@ const indexBusinesses = ref([
     distance: 1.8,
     deliveryTime: 20,
     promotions: [
-      { type: 'special', text: '超值套餐优惠' }
+      {type: 'special', text: '超值套餐优惠'}
     ]
   },
   {
@@ -132,8 +132,8 @@ const indexBusinesses = ref([
     distance: 3.5,
     deliveryTime: 35,
     promotions: [
-      { type: 'new', text: '首单立减8元' },
-      { type: 'special', text: '招牌拌饭特价' }
+      {type: 'new', text: '首单立减8元'},
+      {type: 'special', text: '招牌拌饭特价'}
     ]
   },
   {
@@ -146,7 +146,7 @@ const indexBusinesses = ref([
     distance: 4.2,
     deliveryTime: 40,
     promotions: [
-      { type: 'special', text: '满100减15' }
+      {type: 'special', text: '满100减15'}
     ]
   }
 ]);

@@ -18,14 +18,14 @@
     <!-- 商家列表 -->
     <ul class="pb-16">
       <li
-        v-for="(business, index) in businesses"
-        :key="index"
-        class="p-4 border-b flex gap-3 bg-white"
+          v-for="(business, index) in businesses"
+          :key="index"
+          class="p-4 border-b flex gap-3 bg-white"
       >
         <img
-          :src="getBusinessImage(index + imageOffset)"
-          class="w-20 h-20 rounded"
-          :alt="business.name"
+            :src="getBusinessImage(index + imageOffset)"
+            class="w-20 h-20 rounded"
+            :alt="business.name"
         >
 
         <div class="flex-1">
@@ -49,12 +49,12 @@
 
           <div class="mt-2 flex flex-wrap gap-1">
             <div
-              v-for="(promo, i) in business.promotions"
-              :key="i"
-              class="flex items-center text-xs"
+                v-for="(promo, i) in business.promotions"
+                :key="i"
+                class="flex items-center text-xs"
             >
               <div
-                :class="['w-4 h-4 text-white text-center rounded mr-1',
+                  :class="['w-4 h-4 text-white text-center rounded mr-1',
                          promo.type === 'new' ? 'bg-green-500' : 'bg-orange-400']"
               >
                 {{ promo.type === 'new' ? '新' : '特' }}
@@ -69,7 +69,7 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import {defineProps} from 'vue'
 
 const props = defineProps({
   title: {

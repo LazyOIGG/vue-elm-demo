@@ -24,16 +24,19 @@
 ## 🚀 快速开始
 
 ### 安装依赖
+
 ```bash
 npm install
 ```
 
 ### 开发模式
+
 ```bash
 npm run dev
 ```
 
 ### 生产构建
+
 ```bash
 npm run build
 ```
@@ -57,6 +60,7 @@ src/
 ## 🧩 核心组件
 
 ### 1. FooterNav 底部导航
+
 - 采用固定定位(`fixed`)
 - 支持iOS安全区域适配
 - 动态渲染导航图标
@@ -66,6 +70,7 @@ src/
 ```
 
 ### 2. RecommendedSection 推荐商家
+
 - 支持自定义标题和数据源
 - 动态评分渲染(5星制)
 - 促销标签条件渲染
@@ -80,6 +85,7 @@ src/
 ## 🔧 关键技术实现
 
 1. **动态图片加载**
+
 ```typescript
 const getImagePath = (filename: string) => {
   return new URL(`../assets/images/${filename}`, import.meta.url).href
@@ -87,6 +93,7 @@ const getImagePath = (filename: string) => {
 ```
 
 2. **购物车逻辑**
+
 ```typescript
 // 计算总价
 const total = computed(() => {
@@ -94,26 +101,8 @@ const total = computed(() => {
 })
 ```
 
-3. **路由守卫(示例)**
-```typescript
-router.beforeEach((to) => {
-  if (to.meta.requiresAuth && !isAuthenticated.value) {
-    return '/login'
-  }
-})
-```
-
 ## 📄 许可证
 
 MIT License
+
 ```
-
----
-
-### 使用说明：
-1. 将`项目截图`替换为实际截图
-2. 根据实际项目情况调整"待实现功能"列表
-3. 如需展示更多技术细节，可添加"高级配置"章节
-4. 部署说明可根据实际部署平台补充
-
-这个README包含了现代前端项目所需的所有关键部分，采用清晰的结构和emoji图标提升可读性，同时突出了项目的技术亮点和核心实现。

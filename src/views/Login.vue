@@ -12,9 +12,9 @@
       <div class="mb-6 flex flex-col sm:flex-row sm:items-center gap-2">
         <label class="sm:w-24 font-bold text-gray-600">手机号码：</label>
         <input
-          type="tel"
-          placeholder="请输入手机号"
-          class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
+            type="tel"
+            placeholder="请输入手机号"
+            class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
         >
       </div>
 
@@ -22,9 +22,9 @@
       <div class="mb-8 flex flex-col sm:flex-row sm:items-center gap-2">
         <label class="sm:w-24 font-bold text-gray-600">密码：</label>
         <input
-          type="password"
-          placeholder="请输入密码"
-          class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
+            type="password"
+            placeholder="请输入密码"
+            class="w-full h-10 border-b border-gray-300 focus:border-blue-500 px-2"
         >
       </div>
 
@@ -35,22 +35,22 @@
             class="w-full h-12 bg-green-500 text-white font-bold rounded-lg active:scale-95 transition-transform"
         >
           登录
-</button>
+        </button>
         <button
-          @click="goToRegister"
-          class="w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg active:scale-95"
+            @click="goToRegister"
+            class="w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg active:scale-95"
         >
           去注册
         </button>
       </div>
     </main>
 
-    <FooterNav />
+    <FooterNav/>
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
 import FooterNav from '../components/FooterNav.vue'
 
 const router = useRouter()

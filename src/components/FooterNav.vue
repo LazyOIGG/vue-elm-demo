@@ -5,14 +5,14 @@
     <div class="container mx-auto h-full max-w-screen-sm px-4">
       <ul class="h-full flex justify-around items-center">
         <li
-          v-for="item in navItems"
-          :key="item.path"
-          @click="navigateTo(item.path)"
-          class="flex flex-col items-center text-gray-500 active:text-blue-500 transition-colors"
+            v-for="item in navItems"
+            :key="item.path"
+            @click="navigateTo(item.path)"
+            class="flex flex-col items-center text-gray-500 active:text-blue-500 transition-colors"
         >
           <component
-            :is="item.icon"
-            class="text-xl sm:text-2xl mb-1"
+              :is="item.icon"
+              class="text-xl sm:text-2xl mb-1"
           />
           <span class="text-xs sm:text-sm">{{ item.label }}</span>
         </li>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import {useRouter} from 'vue-router'
 import {
   HomeIcon,
   CompassIcon,
@@ -33,10 +33,10 @@ import {
 const router = useRouter()
 
 const navItems = [
-  { path: '/', icon: HomeIcon, label: '首页' },
-  { path: '/discover', icon: CompassIcon, label: '发现' },
-  { path: '/orderList', icon: OrderIcon, label: '订单' },
-  { path: '/profile', icon: UserIcon, label: '我的' }
+  {path: '/', icon: HomeIcon, label: '首页'},
+  {path: '/discover', icon: CompassIcon, label: '发现'},
+  {path: '/orderList', icon: OrderIcon, label: '订单'},
+  {path: '/profile', icon: UserIcon, label: '我的'}
 ]
 
 const navigateTo = (path) => {

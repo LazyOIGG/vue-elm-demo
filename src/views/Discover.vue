@@ -63,13 +63,13 @@
       <div class="text-sm text-pink-500">立即加入 &gt;</div>
     </div>
 
-    <RecommendedSection :businesses="indexBusinesses" title="推荐商家" :imageOffset="1" />
+    <RecommendedSection :businesses="indexBusinesses" title="推荐商家" :imageOffset="1"/>
     <FooterNav title="底部栏"/>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {ref} from 'vue'
 import FooterNav from '../components/FooterNav.vue'
 import RecommendedSection from "@/components/RecommendedSection.vue";
 
@@ -85,8 +85,8 @@ const indexBusinesses = ref([
     distance: 3.22,
     deliveryTime: 30,
     promotions: [
-      { type: 'new', text: '饿了么新用户首单立减9元' },
-      { type: 'special', text: '特价商品5元起' }
+      {type: 'new', text: '饿了么新用户首单立减9元'},
+      {type: 'special', text: '特价商品5元起'}
     ]
   },
   {
@@ -99,7 +99,7 @@ const indexBusinesses = ref([
     distance: 2.5,
     deliveryTime: 25,
     promotions: [
-      { type: 'new', text: '新用户立减10元' }
+      {type: 'new', text: '新用户立减10元'}
     ]
   },
   {
@@ -112,7 +112,7 @@ const indexBusinesses = ref([
     distance: 1.8,
     deliveryTime: 20,
     promotions: [
-      { type: 'special', text: '超值套餐优惠' }
+      {type: 'special', text: '超值套餐优惠'}
     ]
   },
   {
@@ -125,8 +125,8 @@ const indexBusinesses = ref([
     distance: 3.5,
     deliveryTime: 35,
     promotions: [
-      { type: 'new', text: '首单立减8元' },
-      { type: 'special', text: '招牌拌饭特价' }
+      {type: 'new', text: '首单立减8元'},
+      {type: 'special', text: '招牌拌饭特价'}
     ]
   },
   {
@@ -139,7 +139,7 @@ const indexBusinesses = ref([
     distance: 4.2,
     deliveryTime: 40,
     promotions: [
-      { type: 'special', text: '满100减15' }
+      {type: 'special', text: '满100减15'}
     ]
   }
 ]);

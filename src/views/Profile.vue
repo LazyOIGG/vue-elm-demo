@@ -11,15 +11,15 @@
         <h3 class="text-xl font-bold text-center mb-6">请先登录或注册</h3>
 
         <router-link
-          to="/login"
-          class="block w-full h-12 bg-green-500 text-white font-bold rounded-lg flex items-center justify-center active:scale-95 transition-transform"
+            to="/login"
+            class="block w-full h-12 bg-green-500 text-white font-bold rounded-lg flex items-center justify-center active:scale-95 transition-transform"
         >
           登录
         </router-link>
 
         <router-link
-          to="/register"
-          class="block w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg flex items-center justify-center active:scale-95"
+            to="/register"
+            class="block w-full h-12 bg-gray-100 text-gray-600 font-bold border border-gray-300 rounded-lg flex items-center justify-center active:scale-95"
         >
           注册
         </router-link>
@@ -58,8 +58,8 @@
 
         <!-- 退出登录按钮 -->
         <button
-          @click="handleLogout"
-          class="w-full h-12 bg-red-500 text-white font-bold rounded-lg active:scale-95 transition-transform mt-8"
+            @click="handleLogout"
+            class="w-full h-12 bg-red-500 text-white font-bold rounded-lg active:scale-95 transition-transform mt-8"
         >
           退出登录
         </button>
@@ -71,8 +71,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import {ref, computed, onMounted} from 'vue'
+import {useRouter} from 'vue-router'
 import FooterNav from '../components/FooterNav.vue'
 
 const router = useRouter()

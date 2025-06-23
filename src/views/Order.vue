@@ -18,9 +18,9 @@
         <li v-for="(item, index) in orderItems" :key="index" class="py-3 border-b flex justify-between">
           <div class="flex items-center gap-2">
             <img
-              :src="getFoodImage(item.id)"
-              class="w-10 h-10 rounded"
-              :alt="item.name"
+                :src="getFoodImage(item.id)"
+                class="w-10 h-10 rounded"
+                :alt="item.name"
             >
             <p>{{ item.name }} x {{ item.quantity }}</p>
           </div>
@@ -36,8 +36,8 @@
       <div class="fixed bottom-16 left-0 right-0 bg-white border-t p-3 flex justify-between items-center">
         <div class="text-lg font-bold">&#165;{{ total }}</div>
         <button
-          class="bg-green-500 text-white px-6 py-2 rounded-full"
-          @click="goToPayment"
+            class="bg-green-500 text-white px-6 py-2 rounded-full"
+            @click="goToPayment"
         >
           去支付
         </button>
@@ -49,8 +49,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import {ref, computed} from 'vue';
+import {useRouter} from 'vue-router';
 import FooterNav from '../components/FooterNav.vue';
 
 const router = useRouter();
@@ -61,8 +61,8 @@ const business = ref({
 });
 
 const orderItems = ref([
-  { id: 1, name: '纯肉鲜肉（水饺）', price: 15, quantity: 2 },
-  { id: 2, name: '玉米鲜肉（水饺）', price: 16, quantity: 1 }
+  {id: 1, name: '纯肉鲜肉（水饺）', price: 15, quantity: 2},
+  {id: 2, name: '玉米鲜肉（水饺）', price: 16, quantity: 1}
 ]);
 
 const total = computed(() => {
