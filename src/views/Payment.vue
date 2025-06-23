@@ -83,7 +83,6 @@ const selectPayment = (index) => {
 };
 
 const confirmPayment = () => {
-  // 支付逻辑
   router.push('/order-list');
 };
 </script>

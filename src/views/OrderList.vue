@@ -5,7 +5,6 @@
     </header>
 
     <div class="mt-12 p-4">
-      <!-- 新增创建订单按钮 -->
       <div class="mb-4 flex justify-end">
         <button
             @click="goToOrder"
@@ -92,7 +91,7 @@ const unpaidOrders = ref([
 
 const paidOrders = ref([
   {
-    id: 2, // 添加订单ID
+    id: 2,
     business: '小锅饭豆腐馆（全运店）',
     items: [
       {id: 3, name: '蛋黄焗豆花', price: 25, quantity: 1},
@@ -104,9 +103,7 @@ const paidOrders = ref([
   // 其他已支付订单...
 ]);
 
-// 跳转到订单页面
 const goToOrder = (order = null) => {
-  // 如果有订单信息，可以传递到订单页面
   if (order) {
     router.push({
       path: '/order',
@@ -115,7 +112,6 @@ const goToOrder = (order = null) => {
       }
     });
   } else {
-    // 创建新订单
     router.push('/order');
   }
 };

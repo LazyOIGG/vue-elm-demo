@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen flex flex-col overflow-x-hidden bg-gray-50">
-    <!-- header -->
     <header class="h-12 bg-pink-500 text-white fixed w-full top-0 left-0 z-50 flex items-center px-4">
       <div class="flex items-center gap-2">
         <i class="fa fa-compass"></i>
@@ -8,7 +7,6 @@
       </div>
     </header>
 
-    <!-- 精选活动 -->
     <div class="mt-12 p-4">
       <div class="rounded-lg bg-gradient-to-r from-red-400 to-pink-400 text-white p-4">
         <h2 class="text-lg font-bold">超值限时抢购</h2>
@@ -17,7 +15,6 @@
       </div>
     </div>
 
-    <!-- 热门商圈 -->
     <div class="px-4 mt-2">
       <h3 class="text-sm font-bold mb-2 text-gray-700">热门商圈</h3>
       <div class="flex flex-wrap gap-2">
@@ -30,7 +27,6 @@
       </div>
     </div>
 
-    <!-- 附近推荐 -->
     <div class="px-4 mt-6">
       <h3 class="text-sm font-bold mb-2 text-gray-700">附近推荐</h3>
       <ul class="space-y-4">
@@ -73,7 +69,6 @@ import {ref} from 'vue'
 import FooterNav from '../components/FooterNav.vue'
 import RecommendedSection from "@/components/RecommendedSection.vue";
 
-// 商家数据
 const indexBusinesses = ref([
   {
     id: 1,
@@ -144,7 +139,6 @@ const indexBusinesses = ref([
   }
 ]);
 
-// 获取图片路径
 const getImagePath = (filename) => {
   return new URL(`../assets/images/${filename}`, import.meta.url).href;
 }

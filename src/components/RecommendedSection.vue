@@ -1,13 +1,11 @@
 <template>
   <div>
-    <!-- 推荐商家标题行 -->
     <div class="flex items-center justify-center my-2">
       <div class="h-px bg-gray-200 flex-1"></div>
       <p class="px-4 text-sm text-gray-600">{{ title }}</p>
       <div class="h-px bg-gray-200 flex-1"></div>
     </div>
 
-    <!-- 排序方式 -->
     <ul class="flex justify-around px-4 py-2 bg-white text-sm text-gray-600 border-b">
       <li class="flex items-center">综合排序<i class="ml-1 fa fa-caret-down"></i></li>
       <li>距离最近</li>
@@ -15,7 +13,6 @@
       <li class="flex items-center">筛选<i class="ml-1 fa fa-filter"></i></li>
     </ul>
 
-    <!-- 商家列表 -->
     <ul class="pb-16">
       <li
           v-for="(business, index) in businesses"

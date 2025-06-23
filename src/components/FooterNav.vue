@@ -1,7 +1,5 @@
 <template>
-  <!-- 添加 left-0 和 overflow-hidden 防止偏移 -->
   <nav class="h-14 bg-white border-t border-gray-300 fixed bottom-0 left-0 w-full overflow-hidden">
-    <!-- 限制最大宽度并水平居中 -->
     <div class="container mx-auto h-full max-w-screen-sm px-4">
       <ul class="h-full flex justify-around items-center">
         <li
@@ -45,7 +43,6 @@ const navigateTo = (path) => {
 </script>
 
 <style scoped>
-/* 修复 iOS 底部安全区域 */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   nav {
     padding-bottom: env(safe-area-inset-bottom);
